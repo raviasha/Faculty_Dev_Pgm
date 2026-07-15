@@ -7,26 +7,45 @@ on:
 
 jobs:
   check-assumptions:
-
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
-    - name: Checkout Repository
-      uses: actions/checkout@v4
+      - name: Check changed Markdown and text files
+        shell: bash
+        run: |
+          FAILED=0
 
-    - name: Check Markdown and Text Files
-      run: |
-        FAILED=0
+          FILES=$(git diff --name-only \
+            "${{ github.event.pull_request.base.sha }}" \
+            "${{ github.event.pull_request.head.sha }}" \
+            -- '*.md' '*.txt')
 
-        for file in $(find . -type f \( -name "*.md" -o -name "*.txt" \))
-        do
-          if ! grep -qi "Assumptions" "$file"; then
-            echo "ERROR: $file does not contain 'Assumptions'"
-            FAILED=1
+          if [ -z "$FILES" ]; then
+            echo "No Markdown or text files changed."
+            exit 0
           fi
-        done
 
-        if [ $FAILED -eq 1 ]; then
-          exit 1
-        fi
+          while IFS= read -r file
+          do
+            [ -z "$file" ] && continue
+            [ ! -f "$file" ] && continue
+
+            echo "Checking: $file"
+
+            if ! grep -qi "Assumptions" "$file"; then
+              echo "ERROR: $file does not contain 'Assumptions'."
+              FAILED=1
+            fi
+          done <<< "$FILES"
+
+          if [ "$FAILED" -eq 1 ]; then
+            echo "Assumptions check failed."
+            exit 1
+          fi
+
+          echo "Assumptions check passed."
