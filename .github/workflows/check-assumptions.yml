@@ -1,0 +1,32 @@
+name: Check Assumptions
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  check-assumptions:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+
+    - name: Check Markdown and Text Files
+      run: |
+        FAILED=0
+
+        for file in $(find . -type f \( -name "*.md" -o -name "*.txt" \))
+        do
+          if ! grep -qi "Assumptions" "$file"; then
+            echo "ERROR: $file does not contain 'Assumptions'"
+            FAILED=1
+          fi
+        done
+
+        if [ $FAILED -eq 1 ]; then
+          exit 1
+        fi
