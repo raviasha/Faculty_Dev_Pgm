@@ -1,6 +1,6 @@
 Practical Evaluation Rubric
 
-Criteria 1: Correct Git Commands
+Criteria 1: Correct Git Commands **updated for branch one**
 Marks: 20
 Description: Student uses the required Git commands correctly and in the right sequence.
 
