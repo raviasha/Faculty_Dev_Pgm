@@ -8,7 +8,7 @@ Criteria 2: Repository Hygiene
 Marks: 15
 Description: Repository contains meaningful file names, README, .gitignore and clear structure.
 
-Criteria 3: Commit Quality
+Criteria 3: 
 Marks: 15
 Description: Commits are logical, small enough and have meaningful messages.
 
