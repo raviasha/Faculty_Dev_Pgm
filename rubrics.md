@@ -16,7 +16,7 @@ Criteria 4: Branch and Merge Workflow
 Marks: 20
 Description: Student creates branches, switches correctly, merges changes and resolves conflicts.
 
-Criteria 5: Collaboration Workflow
+Criteria 5: Collaboration Workflow **updating for branch one**
 Marks: 15
 Description: Student pushes changes, creates Pull Request, reviews and merges appropriately.
 
