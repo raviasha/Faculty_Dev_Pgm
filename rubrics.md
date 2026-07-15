@@ -1,10 +1,10 @@
-Practical Evaluation Rubric
+Practical Evaluation Rubric 
 
 Criteria 1: Correct Git Commands **updated for branch one**
 Marks: 20
 Description: Student uses the required Git commands correctly and in the right sequence.
 
-Criteria 2: Repository Hygiene
+Criteria 2: Repository Hygiene **update for branch two**
 Marks: 15
 Description: Repository contains meaningful file names, README, .gitignore and clear structure.
 
