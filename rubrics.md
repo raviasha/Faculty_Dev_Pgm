@@ -8,7 +8,7 @@ Criteria 2: Repository Hygiene **update for branch two**
 Marks: 15
 Description: Repository contains meaningful file names, README, .gitignore and clear structure.
 
-
+qwerty
 Criteria 3: 
 
 Criteria 3: Commit Quality **updated for main**
@@ -23,7 +23,7 @@ Description: Student creates branches, switches correctly, merges changes and re
 Criteria 5: Collaboration Workflow **updating for branch one**
 Marks: 15
 Description: Student pushes changes, creates Pull Request, reviews and merges appropriately.
-
+Assumptions
 Criteria 6: Recovery and Release **update to revert**
 Marks: 15
 Description: Student uses revert, tags and history inspection to maintain reliable versions.
