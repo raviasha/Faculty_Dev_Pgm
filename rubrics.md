@@ -20,7 +20,8 @@ Criteria 5: Collaboration Workflow
 Marks: 15
 Description: Student pushes changes, creates Pull Request, reviews and merges appropriately.
 
-Criteria 6: Recovery and Release
+Criteria 6: Recovery and Release **some more updates for branch one**
 Marks: 15
 Description: Student uses revert, tags and history inspection to maintain reliable versions.
 
+**updated one agan**
