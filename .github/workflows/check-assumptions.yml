@@ -1,4 +1,4 @@
-name: Check Assumptions
+name: Check Risks
 
 on:
   pull_request:
@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  check-assumptions:
+  check-risks:
     runs-on: ubuntu-latest
 
     steps:
@@ -15,7 +15,7 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Check changed Markdown and text files
+      - name: Check changed Markdown and text files for Risks
         shell: bash
         run: |
           FAILED=0
@@ -37,15 +37,15 @@ jobs:
 
             echo "Checking: $file"
 
-            if ! grep -qi "Assumptions" "$file"; then
-              echo "ERROR: $file does not contain 'Assumptions'."
+            if ! grep -qi "Risks" "$file"; then
+              echo "ERROR: $file does not contain a 'Risks' section."
               FAILED=1
             fi
           done <<< "$FILES"
 
           if [ "$FAILED" -eq 1 ]; then
-            echo "Assumptions check failed."
+            echo "Risks check failed."
             exit 1
           fi
 
-          echo "Assumptions check passed."
+          echo "Risks check passed."
