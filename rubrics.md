@@ -28,7 +28,7 @@ Criteria 6: Recovery and Release
 Marks: 15
 Description: Student uses revert, tags and history inspection to maintain reliable versions.
 
-**updated one agan**how are youdjkadkj
+**updated one agan**how are you
 
 Assumptions -
 All students will be punctual
